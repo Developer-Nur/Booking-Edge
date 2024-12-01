@@ -1,4 +1,4 @@
-# stayVista-starter-template
+# Booking Edge
 
 ### Important Links:
 
