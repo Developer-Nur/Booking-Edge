@@ -10,8 +10,8 @@ const DashboardLayout = () => {
             <Sidebar />
 
             {/* outlet --> dynamic content */}
-            <div className="">
-                <div className="">
+            <div className="flex-1 md:ml-64">
+                <div className="p-5">
                     <Outlet />
                 </div>
             </div>

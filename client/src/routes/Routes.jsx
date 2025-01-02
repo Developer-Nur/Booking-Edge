@@ -7,6 +7,9 @@ import SignUp from '../pages/SignUp/SignUp'
 import RoomDetails from '../pages/RoomDetails/RoomDetails'
 import PrivateRoute from './PrivateRoute'
 import DashboardLayout from '../layouts/DashbordLayout'
+import Statistics from '../pages/Dashboard/Common/Statistics'
+import AddRoom from '../pages/Dashboard/Host/AddRoom'
+import MyLislings from '../pages/Dashboard/Host/MyLislings'
 
 export const router = createBrowserRouter([
   {
@@ -35,9 +38,16 @@ export const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: '*',
-        element: <h1>Dashboard</h1>,
-
+        index: true,
+        element: <Statistics />,
+      },
+      {
+        path: 'add-room',
+        element: <AddRoom />,
+      },
+      {
+        path: 'my-listings',
+        element: <MyLislings />,
       }
     ]
       
