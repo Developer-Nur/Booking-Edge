@@ -23,6 +23,7 @@ const SignUp = () => {
     const password = form.password.value
     const image = form.image.files[0]
     const formData = new FormData()
+    // console.log("the form data",formData);
     formData.append('image', image)
 
     try {
@@ -38,7 +39,7 @@ const SignUp = () => {
 
       //2. User Registration
       const result = await createUser(email, password)
-      console.log(result)
+      // console.log(result)
 
       // 3. Save username and photo in firebase
       await updateUserProfile(name, data.data.display_url)
