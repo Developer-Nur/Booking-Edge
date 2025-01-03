@@ -19,8 +19,8 @@ const RoomDetails = () => {
     },
   })
 
-  console.log(room)
   if (isLoading) return <LoadingSpinner />
+  console.log(room)
   return (
     <Container>
       <Helmet>

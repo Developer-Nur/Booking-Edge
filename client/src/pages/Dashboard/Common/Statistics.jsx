@@ -1,11 +1,9 @@
-
-
 const Statistics = () => {
-    return (
-        <div>
-            <h1>Welcome to dashboard: statistics page</h1>
-        </div>
-    );
-};
+  return (
+    <div>
+      <h1>Welcome to dashboard: Statistics Page</h1>
+    </div>
+  )
+}
 
-export default Statistics;
+export default Statistics

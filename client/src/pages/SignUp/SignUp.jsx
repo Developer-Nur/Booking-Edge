@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { TbFidgetSpinner } from 'react-icons/tb'
-import { ImageUpload } from '../../../public/api/utils'
+import { imageUpload } from '../../api/utils'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -23,18 +23,15 @@ const SignUp = () => {
     const email = form.email.value
     const password = form.password.value
     const image = form.image.files[0]
-    const formData = new FormData()
-    // console.log("the form data",formData);
-    formData.append('image', image)
 
     try {
       setLoading(true)
       // 1. Upload image and get image url
-      const image_url = await ImageUpload(image)
-
+      const image_url = await imageUpload(image)
+      console.log(image_url)
       //2. User Registration
       const result = await createUser(email, password)
-      // console.log(result)
+      console.log(result)
 
       // 3. Save username and photo in firebase
       await updateUserProfile(name, image_url)

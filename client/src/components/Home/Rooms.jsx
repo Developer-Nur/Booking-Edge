@@ -8,23 +8,21 @@ import { useSearchParams } from 'react-router-dom'
 
 const Rooms = () => {
   const axiosCommon = useAxiosCommon()
- 
+  // eslint-disable-next-line no-unused-vars
   const [params, setParams] = useSearchParams()
   const category = params.get('category')
-
 
   console.log(category)
   const { data: rooms = [], isLoading } = useQuery({
     queryKey: ['rooms', category],
     queryFn: async () => {
       const { data } = await axiosCommon.get(`/rooms?category=${category}`)
+
       return data
     },
   })
 
   if (isLoading) return <LoadingSpinner />
-
- 
 
   return (
     <Container>
@@ -38,7 +36,7 @@ const Rooms = () => {
         <div className='flex items-center justify-center min-h-[calc(100vh-300px)]'>
           <Heading
             center={true}
-            title={`No Rooms Available In "${category}" Category!`}
+            title='No Rooms Available In This Category!'
             subtitle='Please Select Other Categories.'
           />
         </div>
